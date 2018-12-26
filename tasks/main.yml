@@ -1,2 +1,6 @@
 ---
 # tasks file for ansible-gitlab
+
+- name: debug task
+  debug:
+    msg: test
