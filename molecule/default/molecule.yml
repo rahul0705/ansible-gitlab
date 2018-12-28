@@ -8,10 +8,17 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: instance
+  - name: ubuntu-xenial
     box: ubuntu/xenial64
+    provider_raw_config_args:
+      - "customize ['modifyvm', :id, '--uartmode1', 'disconnected']"
+  - name: ubuntu-bionic
+    box: ubuntu/bionic64
+    provider_raw_config_args:
+      - "customize ['modifyvm', :id, '--uartmode1', 'disconnected']"
 provisioner:
   name: ansible
+  log: true
   lint:
     name: ansible-lint
 scenario:
