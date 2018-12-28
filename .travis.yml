@@ -14,6 +14,7 @@ addons:
 
 install:
   # Install ansible and molecule
+  - pip install pytest=3.9.3
   - pip install ansible molecule
 
   # Check ansible version
